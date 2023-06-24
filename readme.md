@@ -1,6 +1,6 @@
 # Vajra Starter Plugin
 
-[![License](https://poser.pugx.org/smalltowndev/vajra-starter-plugin/license.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
+[![License](https://img.shields.io/badge/license-GPL--2.0%2B-red.svg)](https://github.com/smalltowndev/vajra-starter-plugin/blob/master/license.txt)
 
 This is a WordPress Plugin scaffold to help you create awesome plugins without having to build everything from scratch. Its a growing pain in WordPress that even in 2023 you still have to create your own settings, dashboards, onboarding, file autoloaders and what not. So here's a quick way to kickstart a plugin with almost everything you need.
 
