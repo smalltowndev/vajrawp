@@ -1,0 +1,29 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "vajra-starter/demo-block",
+	"version": "0.1.0",
+	"title": "Demo Block",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Demo block scaffolded with Vajra Starter Plugin.",
+	"supports": {
+		"color": {
+			"text": true,
+			"background": true,
+			"link": true
+		}
+	},
+	"attributes": {
+		"selectedUser": {
+			"type": "string"
+		},
+		"user": {
+			"type": "object"
+		}
+	},
+	"textdomain": "vajra-starter",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

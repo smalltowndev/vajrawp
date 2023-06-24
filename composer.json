@@ -1,0 +1,36 @@
+{
+    "name": "smalltowndev/vajra-starter-plugin",
+    "description": "A starter WordPress plugin scaffold which comes pre-configured for block development, admin dashboard with settings and standard plugin code.",
+    "type": "wordpress-plugin",
+    "author": "SmallTownDev Co.<hey@smalltowndev.com>",
+    "license": "GPL v2 or later",
+    "autoload": {
+        "psr-4": {
+            "SmallTownDev\\VajraStarter\\": "includes/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SmallTownDev\\VajraStarter\\Tests\\": "tests"
+        }
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.7",
+        "phpunit/phpunit": "^9.6",
+        "composer/installers": "^2.2",
+        "bamarni/composer-bin-plugin": "^1.8"
+    },
+    "config": {
+        "allow-plugins": {
+            "bamarni/composer-bin-plugin": true,
+            "composer/installers": true,
+            "automattic/jetpack-autoloader": true
+        }
+    },
+    "require": {
+        "php": "^8.0",
+        "automattic/jetpack-autoloader": "^2.11",
+        "automattic/jetpack-assets": "^1.18",
+        "automattic/jetpack-plugins-installer": "^0.2.4"
+    }
+}

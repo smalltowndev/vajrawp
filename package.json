@@ -1,0 +1,40 @@
+{
+  "name": "vajra-starter-plugin",
+  "version": "0.1.0",
+  "description": "A starter WordPress plugin scaffold which comes pre-configured for block development, admin settings and standard WordPress plugin rules.",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "build:dashboard": "wp-scripts build --webpack-src-dir=src/dashboard --output-path=build/dashboard",
+    "build:onboarding": "wp-scripts build --webpack-src-dir=src/onboarding --output-path=build/onboarding",
+    "build:all": "npm run build && npm run build:settings && npm run build:onboarding",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "format": "wp-scripts format",
+    "format:src": "wp-scripts format ./src",
+    "lint:css": "wp-scripts lint-style",
+    "lint:css:src": "wp-scripts lint-style 'src/**/*.css'",
+    "lint:js": "wp-scripts lint-js",
+    "lint:js:src": "wp-scripts lint-js ./src",
+    "lint:md:docs": "wp-scripts lint-md-docs",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "packages-update": "wp-scripts packages-update",
+    "plugin-zip": "wp-scripts plugin-zip",
+    "start": "wp-scripts start",
+    "start:dashboard": "wp-scripts start --webpack-src-dir=src/dashboard --output-path=build/dashboard",
+    "start:onboarding": "wp-scripts start --webpack-src-dir=src/onboarding --output-path=build/onboarding"
+  },
+  "author": "SmallTownDev Co.",
+  "license": "GPLv2 or later",
+  "devDependencies": {
+    "@wordpress/scripts": "^26.6.0",
+    "autoprefixer": "^10.4.14",
+    "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "@wordpress/components": "^25.1.0",
+    "@wordpress/data": "^9.5.0",
+    "@wordpress/element": "^5.13.0",
+    "@wordpress/i18n": "^4.36.0"
+  }
+}
