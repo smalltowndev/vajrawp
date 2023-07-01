@@ -13,11 +13,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 use SmallTownDev\VajraStarter\Blocks\RegisterBlocks;
 use SmallTownDev\VajraStarter\Admin\RegisterAdmin;
+use SmallTownDev\VajraStarter\Core\Options;
 
 /**
  * Class Plugin
  */
 class Plugin {
+	/**
+	 * Options manager.
+	 *
+	 * @var Options
+	 */
+	public $options_manager;
+
 	/**
 	 * Blocks manager.
 	 *
@@ -36,6 +44,9 @@ class Plugin {
 	 * Constructor.
 	 */
 	public function __construct() {
+		// Get options manager instance.
+		$this->options_manager = Options::get_instance();
+
 		// Register Blocks.
 		$this->blocks_manager = new RegisterBlocks();
 
