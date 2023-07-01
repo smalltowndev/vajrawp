@@ -35,3 +35,7 @@ Need to report a security vulnerability? Email us at [support@smalltowndev.com](
 ## License
 
 Vajra Starter Plugin is licensed under [GNU General Public License v2 (or later)](./license.txt).
+
+## Inspiration
+
+This plugin is heavily influenced by plugins like Jetpack, WooCommerce, and many more. Ultimately becoming a mix of all worlds!
