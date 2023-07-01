@@ -1,0 +1,46 @@
+# Directories
+/.wordpress-org
+/.git
+/.github
+/.babelrc
+/.eslintignore
+/phpcs.xml
+/node_modules
+/tests
+/bin
+/phpunit.xml
+.nvmrc
+.wp-env.json
+phpcs.xml.dist
+
+# Exclude vendor folder, except required dependencies.
+/vendor
+!/vendor/composer
+!/vendor/autoload.php
+!/build
+
+# Files
+.babelrc
+.distignore
+.eslintignore
+.eslintrc.json
+.gitignore
+.editorconfig
+CHANGELOG.md
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+CREDITS.md
+LICENSE.md
+README.md
+composer.json
+composer.lock
+package-lock.json
+yarn.lock
+package.json
+phpcs.xml
+phpunit.xml
+webpack.config.js
+gulpfile.js
+gulp.config.json
+tailwind.config.js
+postcss.config.js
