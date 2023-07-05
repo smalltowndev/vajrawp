@@ -45,9 +45,9 @@ class RegisterAdmin {
 		// Register dashboard hooks.
 		add_action( 'load-' . $dashboard_page_suffix, array( $this, 'dashboard_admin_init' ) );
 
-		$onboarding_page_suffix = add_submenu_page( $primary_slug, 'Vajra Dashboard', 'Getting Started', 'manage_options', 'vajra-starter-onboarding', array( $this, 'plugin_onboarding_page' ) );
-		// Register onboarding hooks.
-		add_action( 'load-' . $onboarding_page_suffix, array( $this, 'onboarding_admin_init' ) );
+		// Register dashboard submenu nav item.
+		add_submenu_page( $primary_slug, 'Vajra Dashboard', 'Dashboard', 'manage_options', $primary_slug . '#/dashboard', '__return_null' );
+
 
 	}
 
@@ -71,34 +71,11 @@ class RegisterAdmin {
 				'textdomain' => 'vajra-starter',
 			)
 		);
+
+		// Enqueue app script.
 		Assets::enqueue_script( 'vajra-starter-dashboard' );
 		// Initial JS state.
 		wp_add_inline_script( 'vajra-starter-dashboard', $this->render_dashboard_initial_state(), 'before' );
-	}
-
-	/**
-	 * Initialize the Onboarding admin resources.
-	 */
-	public function onboarding_admin_init() {
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_onboarding_admin_scripts' ) );
-	}
-
-	/**
-	 * Enqueue plugin onboarding admin scripts and styles.
-	 */
-	public function enqueue_onboarding_admin_scripts() {
-		Assets::register_script(
-			'vajra-starter-onboarding',
-			'build/onboarding/index.js',
-			VAJRA_STARTER_ROOT_FILE,
-			array(
-				'in_footer'  => true,
-				'textdomain' => 'vajra-starter',
-			)
-		);
-		Assets::enqueue_script( 'vajra-starter-onboarding' );
-		// Initial JS state.
-		wp_add_inline_script( 'vajra-starter-onboarding', $this->render_onboarding_initial_state(), 'before' );
 	}
 
 	/**
@@ -108,15 +85,6 @@ class RegisterAdmin {
 	 */
 	public function render_dashboard_initial_state() {
 		return 'var vajraStarterPluginInitialState=JSON.parse(decodeURIComponent("' . rawurlencode( wp_json_encode( $this->initial_dashboard_state() ) ) . '"));';
-	}
-
-	/**
-	 * Render the initial state into a JavaScript variable.
-	 *
-	 * @return string
-	 */
-	public function render_onboarding_initial_state() {
-		return 'var vajraStarterPluginInitialState=JSON.parse(decodeURIComponent("' . rawurlencode( wp_json_encode( $this->initial_onboarding_state() ) ) . '"));';
 	}
 
 	/**
@@ -132,32 +100,11 @@ class RegisterAdmin {
 	}
 
 	/**
-	 * Get the initial state data for hydrating the React UI.
-	 *
-	 * @return array
-	 */
-	public function initial_onboarding_state() {
-		return array(
-			'apiRoot'           => esc_url_raw( rest_url() ),
-			'registrationNonce' => wp_create_nonce( 'vajra-registration-nonce' ),
-		);
-	}
-
-	/**
 	 * Plugin Dashboard page.
 	 */
 	public function plugin_dashboard_page() {
 		?>
 			<div id="vajra-starter-dashboard-root"></div>
-		<?php
-	}
-
-	/**
-	 * Plugin Onboarding page.
-	 */
-	public function plugin_onboarding_page() {
-		?>
-			<div id="vajra-starter-onboarding-root"></div>
 		<?php
 	}
 }
