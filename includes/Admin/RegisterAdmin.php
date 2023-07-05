@@ -29,26 +29,36 @@ class RegisterAdmin {
 	 * Register admin dashboard.
 	 */
 	public function register_admin_dashboard() {
-		$primary_slug = 'vajra-starter-dashboard';
+		$primary_slug = 'vajra-starter';
 
-		add_menu_page(
+		$dashboard_page_suffix = add_menu_page(
 			__( 'Vajra Starter Dashboard', 'vajra-starter' ),
 			_x( 'Vajra Starter', 'The Vajra Plugin product name, without the Vajra prefix', 'vajra-starter' ),
 			'manage_options',
 			$primary_slug,
-			'',
+			array( $this, 'plugin_dashboard_page' ),
 			'dashicons-superhero',
 			30
 		);
 
-		$dashboard_page_suffix = add_submenu_page( $primary_slug, 'Vajra Dashboard', 'Dashboard', 'manage_options', $primary_slug, array( $this, 'plugin_dashboard_page' ) );
 		// Register dashboard hooks.
 		add_action( 'load-' . $dashboard_page_suffix, array( $this, 'dashboard_admin_init' ) );
 
 		// Register dashboard submenu nav item.
 		add_submenu_page( $primary_slug, 'Vajra Dashboard', 'Dashboard', 'manage_options', $primary_slug . '#/dashboard', '__return_null' );
 
+		// Remove duplicate menu hack.
+		// Note: It needs to go after the above add_submenu_page call.
+		remove_submenu_page( $primary_slug, $primary_slug );
 
+		// Register getting started aka onboarding submenu nav item.
+		add_submenu_page( $primary_slug, 'Vajra Dashboard', 'Getting Started', 'manage_options', $primary_slug . '#/getting-started', '__return_null' );
+
+		// Register changelog submenu nav item.
+		add_submenu_page( $primary_slug, 'Vajra Dashboard', 'Changelog', 'manage_options', $primary_slug . '#/changelog', '__return_null' );
+
+		// Register settings submenu nav item.
+		add_submenu_page( $primary_slug, 'Vajra Dashboard', 'Settings', 'manage_options', $primary_slug . '#/settings', '__return_null' );
 	}
 
 	/**
