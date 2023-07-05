@@ -1,8 +1,14 @@
+/**
+ * External dependencies.
+ */
 import * as WPElement from '@wordpress/element';
 import React from 'react';
-import App from './components'
 
-import '../styles/index.css';
+/**
+ * Internal dependencies.
+ */
+import AppContainer from './components'
+import './styles/index.css';
 
 /**
  * Initial render function.
@@ -16,7 +22,7 @@ function render() {
 
 	// @todo: Remove fallback when we drop support for WP 6.1
 	const component = (
-		<App />
+		<AppContainer />
 	);
 	if ( WPElement.createRoot ) {
 		WPElement.createRoot( container ).render( component );
