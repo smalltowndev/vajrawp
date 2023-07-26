@@ -23,4 +23,9 @@ You can get help by reaching out to me at https://github.com/smalltowndev/vajra-
 == Changelog ==
 
 = 0.1.0-beta =
-* Initial release
+* Add base template parts
+* Add Dashboard page
+* Add Onboarding layout and page
+* Add activation redirect to onboarding
+* Add Settings layout and page
+
