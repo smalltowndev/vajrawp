@@ -107,7 +107,7 @@ function vajra_starter_activation( $plugin ) {
 		VAJRA_STARTER_ROOT_FILE_RELATIVE_PATH === $plugin &&
 		\Automattic\Jetpack\Plugins_Installer::is_current_request_activating_plugin_from_plugins_screen( VAJRA_STARTER_ROOT_FILE_RELATIVE_PATH )
 	) {
-		wp_safe_redirect( esc_url( admin_url( 'admin.php?page=vajra-starter-onboarding' ) ) );
+		wp_safe_redirect( esc_url( admin_url( 'admin.php?page=vajra-starter#/getting-started' ) ) );
 		exit;
 	}
 }
