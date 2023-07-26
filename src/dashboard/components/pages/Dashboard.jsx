@@ -1,4 +1,4 @@
-import { FolderIcon, RocketLaunchIcon, CubeIcon, AdjustmentsVerticalIcon, ClipboardDocumentCheckIcon, SparklesIcon, LockClosedIcon, SquaresPlusIcon } from '@heroicons/react/20/solid'
+import { FolderIcon, RocketLaunchIcon, CubeIcon, AdjustmentsVerticalIcon, ClipboardDocumentCheckIcon, SparklesIcon, SquaresPlusIcon } from '@heroicons/react/20/solid'
 
 const features = [
 
@@ -42,16 +42,16 @@ const features = [
 ]
 const Dashboard = () => {
     return (
-        <div className="overflow-hidden bg-white py-12 rounded">
+        <div className="overflow-hidden bg-white py-10 rounded">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none">
                     <div className="lg:pr-8">
                         <h2 className="text-base font-semibold leading-7 text-gray-600">Build faster</h2>
-                        <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Kickstart your WP Project!</p>
-                        <p className="mt-6 text-lg leading-8 text-gray-600">
+                        <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Kickstart your WordPress Project!</p>
+                        <p className="mt-4 text-lg leading-8 text-gray-600">
                             A plugin ready for you to bootstrap your next idea, without needing to start from scratch. Take a look at all the offered features.
                         </p>
-                        <dl className="mt-10 max-w-xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 text-base leading-7 text-gray-600 lg:max-w-none">
+                        <dl className="mt-12 max-w-xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 text-base leading-7 text-gray-600 lg:max-w-none">
                             {features.map((feature) => (
                                 <div key={feature.name} className="relative pl-9">
                                     <dt className="inline font-semibold text-gray-900">
