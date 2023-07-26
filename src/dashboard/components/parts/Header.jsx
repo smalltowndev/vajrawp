@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom'
 import { Disclosure } from '@headlessui/react'
-import { Cog6ToothIcon } from "@heroicons/react/20/solid";
 import classNames from 'clsx';
 const pluginState = window.vajraPluginState;
 
