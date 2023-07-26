@@ -2,6 +2,10 @@
     padding-left: 0;
 }
 
+.wp-menu-image.dashicons-before img {
+    display: inline-block;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

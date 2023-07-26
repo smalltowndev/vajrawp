@@ -1,13 +1,13 @@
 /**
  * Internal dependencies.
  */
-import { Header, Footer, Content } from './parts';
+import { Header, Footer, Content } from '../parts';
+import {Cog6ToothIcon} from "@heroicons/react/20/solid";
 
-export default function Layout({ children }) {
+export default function OnboardingLayout({ children }) {
     return (
         <>
             <div className="min-h-full">
-                <Header />
                 <Content>{children}</Content>
                 <Footer />
             </div>
