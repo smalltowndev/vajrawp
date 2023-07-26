@@ -2,6 +2,8 @@
 
 [![License](https://img.shields.io/badge/license-GPL--2.0%2B-red.svg)](https://github.com/smalltowndev/vajra-starter-plugin/blob/master/license.txt)
 
+https://www.youtube.com/watch?v=S0eoqFg0TCk
+
 This is a WordPress Plugin scaffold to help you create awesome plugins without having to build everything from scratch. Its a growing pain in WordPress that even in 2023 you still have to create your own settings, dashboards, onboarding, file autoloaders and what not. So here's a quick way to kickstart a plugin with almost everything you need.
 
 Why almost? As you start to make this plugin yours it is bound to have that one cool feature missing that you want, so why not add that to this yourself. Welcome to opensource, even if its your first time contributing, I'll make sure that you feel like home :).
