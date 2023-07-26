@@ -37,7 +37,7 @@ class RegisterAdmin {
 			'manage_options',
 			$primary_slug,
 			array( $this, 'plugin_dashboard_page' ),
-			'dashicons-superhero',
+			VAJRA_STARTER_URL . '/assets/img/icon.svg',
 			30
 		);
 
@@ -94,7 +94,7 @@ class RegisterAdmin {
 	 * @return string
 	 */
 	public function render_dashboard_initial_state() {
-		return 'var vajraStarterPluginInitialState=JSON.parse(decodeURIComponent("' . rawurlencode( wp_json_encode( $this->initial_dashboard_state() ) ) . '"));';
+		return 'var vajraPluginState=JSON.parse(decodeURIComponent("' . rawurlencode( wp_json_encode( $this->initial_dashboard_state() ) ) . '"));';
 	}
 
 	/**
@@ -106,6 +106,7 @@ class RegisterAdmin {
 		return array(
 			'apiRoot'           => esc_url_raw( rest_url() ),
 			'registrationNonce' => wp_create_nonce( 'vajra-registration-nonce' ),
+			'assetsURL'         => VAJRA_STARTER_URL . '/assets',
 		);
 	}
 
