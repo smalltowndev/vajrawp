@@ -3,7 +3,7 @@ Contributors: smalltowndev, lushkant
 Requires at least: 6.0
 Requires PHP: 8.0
 Tested up to: 6.2.2
-Stable tag: 0.1.0
+Stable tag: 1.0.0
 Tags: scaffold, plugin starter, settings, 
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -22,5 +22,5 @@ You can get help by reaching out to me at https://github.com/smalltowndev/vajra-
 
 == Changelog ==
 
-= 0.1.0 =
+= 0.1.0-beta =
 * Initial release
