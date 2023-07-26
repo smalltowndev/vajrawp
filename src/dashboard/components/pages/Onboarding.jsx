@@ -50,40 +50,37 @@ const steps = [
 const Onboarding = () => {
     return (
         <div className="bg-white px-4 py-4 rounded">
-        <nav aria-label="Progress">
-            <ol role="list" className="space-y-4 md:flex md:space-x-8 md:space-y-0">
-                {steps.map((step) => (
-                    <li key={step.name} className="md:flex-1">
-                        {step.status === 'complete' ? (
-                            <a
-                                href={step.href}
-                                className="group flex flex-col border-l-4 border-gray-600 py-2 pl-4 hover:border-gray-800 md:border-l-0 md:border-t-4 md:pb-0 md:pl-0 md:pt-4 outline-none shadow-none"
-                            >
-                                <span className="text-sm font-medium text-gray-600 group-hover:text-gray-800">{step.id}</span>
-                                <span className="text-sm font-medium">{step.name}</span>
-                            </a>
-                        ) : step.status === 'current' ? (
-                            <a
-                                href={step.href}
-                                className="flex flex-col border-l-4 border-gray-600 py-2 pl-4 md:border-l-0 md:border-t-4 md:pb-0 md:pl-0 md:pt-4 outline-none shadow-none"
-                                aria-current="step"
-                            >
-                                <span className="text-sm font-medium text-gray-600">{step.id}</span>
-                                <span className="text-sm font-medium">{step.name}</span>
-                            </a>
-                        ) : (
-                            <a
-                                href={step.href}
-                                className="group flex flex-col border-l-4 border-gray-200 py-2 pl-4 hover:border-gray-300 md:border-l-0 md:border-t-4 md:pb-0 md:pl-0 md:pt-4 outline-none shadow-none"
-                            >
-                                <span className="text-sm font-medium text-gray-500 group-hover:text-gray-700">{step.id}</span>
-                                <span className="text-sm font-medium">{step.name}</span>
-                            </a>
-                        )}
-                    </li>
-                ))}
-            </ol>
-        </nav>
+            <nav aria-label="Progress">
+                <ol role="list" className="space-y-4 md:flex md:space-x-8 md:space-y-0">
+                    {steps.map((step) => (
+                        <li key={step.name} className="md:flex-1">
+                            {step.status === 'complete' ? (
+                                <a
+                                    href={step.href}
+                                    className="group flex flex-col border-l-4 border-gray-600 py-2 pl-4 hover:border-gray-800 md:border-l-0 md:border-t-4 md:pb-0 md:pl-0 md:pt-4 outline-none shadow-none"
+                                >
+                                    <span className="text-sm font-medium">{step.name}</span>
+                                </a>
+                            ) : step.status === 'current' ? (
+                                <a
+                                    href={step.href}
+                                    className="flex flex-col border-l-4 border-gray-600 py-2 pl-4 md:border-l-0 md:border-t-4 md:pb-0 md:pl-0 md:pt-4 outline-none shadow-none"
+                                    aria-current="step"
+                                >
+                                    <span className="text-sm font-medium">{step.name}</span>
+                                </a>
+                            ) : (
+                                <a
+                                    href={step.href}
+                                    className="group flex flex-col border-l-4 border-gray-200 py-2 pl-4 hover:border-gray-300 md:border-l-0 md:border-t-4 md:pb-0 md:pl-0 md:pt-4 outline-none shadow-none"
+                                >
+                                    <span className="text-sm font-medium">{step.name}</span>
+                                </a>
+                            )}
+                        </li>
+                    ))}
+                </ol>
+            </nav>
             <div className="bg-white py-20">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto max-w-4xl sm:text-center">
@@ -92,8 +89,7 @@ const Onboarding = () => {
                         </p>
                     </div>
                     <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600 sm:text-center">
-                        Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et quasi iusto modi velit ut non voluptas in.
-                        Explicabo id ut laborum.
+                        Plans for all that you need and more, select a plan and get ready to take off!
                     </p>
                     <div className="mt-20 flow-root">
                         <div className="isolate -mt-16 grid max-w-sm grid-cols-1 gap-y-16 divide-y divide-gray-100 sm:mx-auto lg:-mx-8 lg:mt-0 lg:max-w-none lg:grid-cols-3 lg:divide-x lg:divide-y-0 xl:-mx-4">
