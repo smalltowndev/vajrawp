@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom'
 import { Disclosure } from '@headlessui/react'
 import { Cog6ToothIcon } from "@heroicons/react/20/solid";
 import classNames from 'clsx';
+const pluginState = window.vajraPluginState;
 
 const navigation = [
     { name: 'Dashboard', href: '/dashboard' },
@@ -22,8 +23,8 @@ const Header = () => {
                         <div className="flex flex-shrink-0 items-center justify-between pt-6 pb-4">
                             <div className="flex gap-4 items-center">
                                 <img
-                                    className="block h-8 w-auto"
-                                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                                    className="block h-9 w-auto"
+                                    src={pluginState.assetsURL + '/img/icon-dark.svg'}
                                     alt="Vajra Starter"
                                 />
                                 <h1 className="text-3xl font-bold leading-tight tracking-tight text-gray-900">Vajra Starter</h1>
