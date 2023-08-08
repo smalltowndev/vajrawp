@@ -11,9 +11,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+use SmallTownDev\VajraStarter\Core\Options;
+use SmallTownDev\VajraStarter\API\OptionsAPI;
 use SmallTownDev\VajraStarter\Blocks\RegisterBlocks;
 use SmallTownDev\VajraStarter\Admin\RegisterAdmin;
-use SmallTownDev\VajraStarter\Core\Options;
 
 /**
  * Class Plugin
@@ -25,6 +26,13 @@ class Plugin {
 	 * @var Options
 	 */
 	public $options_manager;
+
+	/**
+	 * Options API manager.
+	 *
+	 * @var OptionsAPI
+	 */
+	public $options_api_manager;
 
 	/**
 	 * Blocks manager.
@@ -46,6 +54,9 @@ class Plugin {
 	public function __construct() {
 		// Get options manager instance.
 		$this->options_manager = Options::get_instance();
+
+		// Register APIs.
+		$this->options_api_manager = new OptionsAPI();
 
 		// Register Blocks.
 		$this->blocks_manager = new RegisterBlocks();
