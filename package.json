@@ -25,6 +25,7 @@
   "author": "SmallTownDev Co.",
   "license": "GPLv2 or later",
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.4",
     "@wordpress/scripts": "^26.6.0",
     "autoprefixer": "^10.4.14",
     "tailwindcss": "^3.3.2"
