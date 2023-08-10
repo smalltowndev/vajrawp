@@ -26,7 +26,7 @@ class OptionsAPI {
 	 *
 	 * @var $namespace
 	 */
-	private $namespace = 'vajra-starter';
+	private $namespace = VAJRA_STARTER_SLUG;
 
 	/**
 	 * Available routes.
