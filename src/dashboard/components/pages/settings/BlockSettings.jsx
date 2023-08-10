@@ -1,23 +1,47 @@
 import SettingsLayout from '../../layout/SettingsLayout';
+import {SettingsCard, TextInput, ToggleInput} from "../../templates";
+import {useState} from "@wordpress/element";
 
 const BlockSettings = () => {
+    const [ options, setOptions ] = useState({
+        "site-meta-desc": "",
+        "site-meta-toggle": false
+    });
+
+    const updateOption = (value, id) => {
+        setOptions({...options, [id]: value });
+    }
+
+    const onSave = () => {
+        // saves something on the api.
+        console.log(options);
+    }
     return (
         <SettingsLayout>
-            <form className="bg-white p-10 rounded">
-                <div className="space-y-12">
-                    <div className="pb-12">
-                        <h2 className="text-base font-semibold leading-7 text-gray-900">Block Config</h2>
-                    </div>
-                </div>
-                <div className="mt-2 flex items-center justify-start gap-x-6">
-                    <button
-                        type="submit"
-                        className="rounded-md bg-gray-700 px-10 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                    >
-                        Save
-                    </button>
-                </div>
-            </form>
+                <SettingsCard
+                    title="Block options"
+                    description="We'll always let you know about important changes, but you pick what else you want to hear about."
+                    onSave={onSave}
+                >
+
+                    <TextInput
+                        id="site-meta-desc"
+                        label="Some Input"
+                        description="These are delivered via SMS to your mobile phone."
+                        value={options["site-meta-desc"]}
+                        placeholder="Hello world"
+                        setOption={updateOption}
+                    />
+                    <ToggleInput
+                        id="site-meta-toggle"
+                        label="Some Toggle"
+                        description="(Extra description)"
+                        value={options["site-meta-toggle"]}
+                        placeholder="Hello world"
+                        setOption={updateOption}
+                    />
+
+                </SettingsCard>
         </SettingsLayout>
     )
 }
