@@ -24,7 +24,7 @@ export default function SettingsLayout({ children }) {
         <>
             <div className="min-h-full">
                 <Header navigation={navigation} secondaryNav={secondaryNav} />
-                <Content>{children}</Content>
+                <Content className="space-y-10">{children}</Content>
                 <Footer />
             </div>
         </>
