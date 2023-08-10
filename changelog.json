@@ -1,7 +1,19 @@
 {
+  "0.2.0-beta": {
+    "New": [
+      "Added Settings fields",
+      "Added Changelog page"
+    ],
+    "Fixes": [
+      "Settings page not working",
+      "Dashboard script localization data"
+    ],
+    "Improvements": [
+      "Plugin versions at Dashboard header",
+      "Removed unused dependencies"
+    ]
+  },
   "0.1.0-beta": {
-    "New": "Initial release",
-    "Fixes": "",
-    "Improvements": ""
+    "New": "Initial release"
   }
 }
