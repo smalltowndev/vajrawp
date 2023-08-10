@@ -6,6 +6,11 @@
     display: inline-block;
 }
 
+#wpbody-content input[type="checkbox"]:checked::before,
+#wpbody-content input[type="radio"]:checked::before {
+    display: none;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
