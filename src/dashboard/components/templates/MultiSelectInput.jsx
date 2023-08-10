@@ -28,7 +28,7 @@ const MultiSelectInput = ({ id, label, description, values, options, setOption, 
                                         {...props}
                                     />
                                 </div>
-                                <div className="text-sm leading-6">
+                                <div className="text-sm leading-6 self-center">
                                     <label htmlFor={id+`[${option.key}]`} className="font-medium text-gray-900">
                                         {option?.label}
                                     </label>

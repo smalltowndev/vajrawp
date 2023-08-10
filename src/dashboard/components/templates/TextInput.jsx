@@ -19,7 +19,7 @@ const TextInput = ({ id, label, description, value, className, options, setOptio
                 id={id}
                 autoComplete={id}
                 className={clsx(
-                    "block w-full max-w-[450px] rounded-md border-0 mt-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6",
+                    "block w-full max-w-[450px] rounded-md border-0 mt-3 px-2.5 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6",
                            className && className
                 )}
                 onChange={handleChange}

@@ -59,7 +59,7 @@ const GeneralSettings = () => {
             </SettingsCard>
 
             <SettingsCard
-                title="Select Fields"
+                title="Select fields"
                 description="We'll always let you know about important changes, but you pick what else you want to hear about."
                 onSave={onSave}
             >
