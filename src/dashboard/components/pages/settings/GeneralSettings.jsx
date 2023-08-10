@@ -1,11 +1,13 @@
 /**
  * External dependencies.
  */
-import { useState } from '@wordpress/element';
+import { useState, useEffect } from '@wordpress/element';
+import apiFetch from '@wordpress/api-fetch';
 
 /**
  * Internal dependencies.
  */
+const { apiRoute } = window.vajraPluginState;
 import SettingsLayout from '../../layout/SettingsLayout';
 import { SettingsCard, RadioSelectInput, MultiSelectInput, SelectInput, TextInput, ToggleInput } from '../../templates';
 
@@ -21,6 +23,12 @@ const GeneralSettings = () => {
         "site-meta-desc": "",
         "site-meta-toggle": false
     });
+
+    useEffect(  () => {
+        apiFetch( { path: `/${apiRoute}/options/get` } ).then(
+            response => console.log( response )
+        );
+    }, [apiRoute])
 
     const updateOption = (value, id) => {
         setOptions({...options, [id]: value });
