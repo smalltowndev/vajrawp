@@ -1,6 +1,6 @@
 {
   "name": "vajra-starter-plugin",
-  "version": "0.1.0-beta",
+  "version": "0.2.0-beta",
   "description": "A starter WordPress plugin scaffold which comes pre-configured for block development, admin settings and standard WordPress plugin rules.",
   "main": "build/index.js",
   "scripts": {
