@@ -23,7 +23,21 @@ You can get help by reaching out to me at https://github.com/smalltowndev/vajra-
 == Changelog ==
 
 = 0.2.0-beta =
-
+* New: Options API in REST for Client Side Apps
+* New: Added Settings Input fields at Dashboard App
+* New: Added Changelog.json support at Dashboard App
+* New: Added animated toast notifications at Dashboard App
+* New: Well separated Settings UI components at Dashboard App
+* Fixes: Form styles getting overridden at Dashboard App
+* Fixes: Package.json scripts not working
+* Fixes: Settings forms not working at Dashboard App
+* Fixes: Incomplete Dashboard App script localization data
+* Improvements: Updated Getting Started aka Onboarding at Dashboard App
+* Improvements: Updated Tailwind config
+* Improvements: Reorganized and updated package.json scripts
+* Improvements: Dynamic plugin versions at Dashboard App header
+* Improvements: Update Dashboard App global stylesheet
+* Improvements: Removed unused dependencies
 
 = 0.1.0-beta =
 * Initial release

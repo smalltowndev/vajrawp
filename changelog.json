@@ -1,15 +1,24 @@
 {
   "0.2.0-beta": {
     "New": [
-      "Added Settings fields",
-      "Added Changelog page"
+      "Options API in REST for Client Side Apps",
+      "Added Settings Input fields at Dashboard App",
+      "Added Changelog.json support at Dashboard App",
+      "Added animated toast notifications at Dashboard App",
+      "Well separated Settings UI components at Dashboard App"
     ],
     "Fixes": [
-      "Settings page not working",
-      "Dashboard script localization data"
+      "Form styles getting overridden at Dashboard App",
+      "Package.json scripts not working",
+      "Settings forms not working at Dashboard App",
+      "Incomplete Dashboard App script localization data"
     ],
     "Improvements": [
-      "Plugin versions at Dashboard header",
+      "Updated Getting Started aka Onboarding at Dashboard App",
+      "Updated Tailwind config",
+      "Reorganized and updated package.json scripts",
+      "Dynamic plugin versions at Dashboard App header",
+      "Update Dashboard App global stylesheet",
       "Removed unused dependencies"
     ]
   },
