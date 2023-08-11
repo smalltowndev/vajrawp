@@ -4,23 +4,19 @@
   "description": "A starter WordPress plugin scaffold which comes pre-configured for block development, admin settings and standard WordPress plugin rules.",
   "main": "build/index.js",
   "scripts": {
-    "build": "wp-scripts build",
+    "dev:blocks": "wp-scripts start",
+    "dev:dashboard": "wp-scripts start --webpack-src-dir=src/dashboard --output-path=build/dashboard",
+    "dev:php": "composer install",
+    "build:blocks": "wp-scripts build",
     "build:dashboard": "wp-scripts build --webpack-src-dir=src/dashboard --output-path=build/dashboard",
-    "build:all": "npm run build && npm run build:dashboard",
-    "check-engines": "wp-scripts check-engines",
-    "check-licenses": "wp-scripts check-licenses",
+    "build:all": "composer install --no-dev && npm run build && npm run build:dashboard",
     "format": "wp-scripts format",
-    "format:src": "wp-scripts format ./src",
     "lint:css": "wp-scripts lint-style",
-    "lint:css:src": "wp-scripts lint-style 'src/**/*.css'",
     "lint:js": "wp-scripts lint-js",
-    "lint:js:src": "wp-scripts lint-js ./src",
     "lint:md:docs": "wp-scripts lint-md-docs",
     "lint:pkg-json": "wp-scripts lint-pkg-json",
     "packages-update": "wp-scripts packages-update",
-    "plugin-zip": "wp-scripts plugin-zip",
-    "start": "wp-scripts start",
-    "start:dashboard": "wp-scripts start --webpack-src-dir=src/dashboard --output-path=build/dashboard"
+    "plugin-zip": "npm run build:all && wp-scripts plugin-zip"
   },
   "author": "SmallTownDev Co.",
   "license": "GPLv2 or later",
@@ -42,5 +38,13 @@
     "clsx": "^1.2.1",
     "react-hot-toast": "^2.4.1",
     "react-router-dom": "^6.14.1"
-  }
+  },
+  "files": [
+    "assets",
+    "build",
+    "includes",
+    "vendor",
+    "changelog.json",
+    "vajra-starter-plugin.php"
+  ]
 }
