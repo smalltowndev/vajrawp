@@ -2,7 +2,7 @@
 Contributors: smalltowndev, lushkant
 Requires at least: 6.0
 Requires PHP: 8.0
-Tested up to: 6.2.2
+Tested up to: 6.3
 Stable tag: 1.0.0
 Tags: scaffold, plugin starter, settings, 
 License: GPLv2
@@ -22,10 +22,9 @@ You can get help by reaching out to me at https://github.com/smalltowndev/vajra-
 
 == Changelog ==
 
+= 0.2.0-beta =
+
+
 = 0.1.0-beta =
-* Add base template parts
-* Add Dashboard page
-* Add Onboarding layout and page
-* Add activation redirect to onboarding
-* Add Settings layout and page
+* Initial release
 

@@ -9,9 +9,9 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Vajra Starter Plugin
- * Plugin URI:        https://vajra-starter-wp.smalltowndev.com
+ * Plugin URI:        https://vajrawp.smalltowndev.com
  * Description:       A starter WordPress plugin scaffold which comes pre-configured for block development, admin dashboard with settings and standard plugin code.
- * Version:           0.1.0-beta
+ * Version:           0.2.0-beta
  * Requires at least: 6.0
  * Requires PHP:      8.0
  * Author:            SmallTownDev Co.
@@ -42,7 +42,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'VAJRA_STARTER_VERSION', '0.1.0-beta' );
+define( 'VAJRA_STARTER_VERSION', '0.2.0-beta' );
 define( 'VAJRA_STARTER_DIR', plugin_dir_path( __FILE__ ) );
 define( 'VAJRA_STARTER_ROOT_FILE', __FILE__ );
 define( 'VAJRA_STARTER_ROOT_FILE_RELATIVE_PATH', plugin_basename( __FILE__ ) );
