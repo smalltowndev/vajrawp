@@ -2,18 +2,20 @@
  * External dependencies.
  */
 import { useState, useEffect } from '@wordpress/element';
-import apiFetch from '@wordpress/api-fetch';
 
 /**
  * Internal dependencies.
  */
-const { apiRoute } = window.vajraPluginState;
+import { showPromiseToast } from '../../../utils';
+import { fetchOptions, saveOptions } from '../../../api/settings';
 import SettingsLayout from '../../layout/SettingsLayout';
 import { SettingsCard, RadioSelectInput, MultiSelectInput, SelectInput, TextInput, ToggleInput } from '../../templates';
 
 const GeneralSettings = () => {
 
-    const [ options, setOptions ] = useState({
+    const [processing, setProcessing] = useState(true);
+
+    const [options, setOptions] = useState({
         "push-notif": "none",
         "push-select": [
             "same",
@@ -24,20 +26,23 @@ const GeneralSettings = () => {
         "site-meta-toggle": false
     });
 
-    useEffect(  () => {
-        apiFetch( { path: `/${apiRoute}/options/get` } ).then(
-            response => console.log( response )
-        );
-    }, [apiRoute])
-
-    const updateOption = (value, id) => {
+    const updateOption = ( value, id ) => {
         setOptions({...options, [id]: value });
     }
 
     const onSave = () => {
-        // saves something on the api.
-        console.log(options);
+        if ( !processing ) {
+            const res = saveOptions( { options } );
+            showPromiseToast( res, '', 'Settings updated!' );
+        }
     }
+
+    useEffect( () => {
+        const updateOptions = ( settings ) => setOptions({ ...options, ...settings });
+        const res = fetchOptions( { updateOptions } ).then( res => setProcessing(false) );
+
+        showPromiseToast(res);
+    }, []);
 
     return (
         <SettingsLayout>
@@ -52,7 +57,7 @@ const GeneralSettings = () => {
                     label="Site Meta Description"
                     description="These are delivered via SMS to your mobile phone."
                     value={options["site-meta-desc"]}
-                    placeholder="Hello world"
+                    placeholder="Hello world!"
                     setOption={updateOption}
                 />
                 <ToggleInput
