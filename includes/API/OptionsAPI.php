@@ -106,7 +106,7 @@ class OptionsAPI {
 	 * @return WP_Error|WP_REST_Response
 	 */
 	public function get_option( WP_REST_Request $request ) {
-		$key = $request->get_param( 'option_name' );
+		$key = $request->get_param( 'key' );
 
 		$options = Options::get_instance();
 
@@ -121,6 +121,34 @@ class OptionsAPI {
 		}
 
 		return new WP_REST_Response( $result, 200 );
+	}
+
+	/**
+	 * Set option or options.
+	 *
+	 * @param WP_REST_Request $request Request object.
+	 *
+	 * @return WP_Error|WP_REST_Response
+	 */
+	public function set_option( WP_REST_Request $request ) {
+		$settings = $request->get_param( 'options' );
+
+		$options = Options::get_instance();
+
+		if ( ! empty( $settings ) && is_array( $settings ) ) {
+			foreach ( $settings as $key => $value ) {
+				$options->set( $key, $value );
+			}
+		} else {
+			return new WP_Error( 'settings_error', __( 'No settings provided.', 'vajra-starter' ) );
+		}
+
+		return new WP_REST_Response(
+			array(
+				'message' => __( 'Settings updated.', 'vajra-starter' ),
+			),
+			200
+		);
 	}
 
 }
