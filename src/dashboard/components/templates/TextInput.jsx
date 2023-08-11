@@ -23,7 +23,7 @@ const TextInput = ({ id, label, description, value, className, options, setOptio
                            className && className
                 )}
                 onChange={handleChange}
-                defaultValue={value}
+                value={value}
                 {...props}
             />
         </fieldset>

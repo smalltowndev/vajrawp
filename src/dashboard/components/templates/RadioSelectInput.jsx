@@ -18,7 +18,7 @@ const RadioSelectInput = ({ id, label, description, value, options, setOption, .
                                 name={id}
                                 type="radio"
                                 value={option.key}
-                                defaultChecked={ value === option.key }
+                                checked={value === option.key}
                                 onChange={handleChange}
                                 className="h-4 w-4 shadow-none border-gray-300 text-gray-600 focus:ring-gray-600"
                             />

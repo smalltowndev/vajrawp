@@ -23,7 +23,7 @@ const SelectInput = ({ id, label, description, value, options, setOption, classN
                     className && className
                 )}
                 onChange={handleChange}
-                defaultValue={value}
+                value={value ?? ''}
                 {...props}
             >
                 <option value="default">Select</option>

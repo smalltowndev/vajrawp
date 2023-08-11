@@ -24,7 +24,7 @@ const MultiSelectInput = ({ id, label, description, values, options, setOption, 
                                         type="checkbox"
                                         className="h-4 w-4 shadow-none rounded border-gray-300 text-gray-600 focus:ring-gray-600"
                                         onChange={(e) => handleChange(e, option.key)}
-                                        defaultChecked={values.includes(option.key)}
+                                        checked={values.includes(option.key)}
                                         {...props}
                                     />
                                 </div>
