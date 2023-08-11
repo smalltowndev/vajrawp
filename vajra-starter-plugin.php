@@ -50,10 +50,10 @@ define( 'VAJRA_STARTER_SLUG', 'vajra-starter' );
 define( 'VAJRA_STARTER_FOLDER', dirname( plugin_basename( __FILE__ ) ) );
 define( 'VAJRA_STARTER_URL', plugins_url( '', __FILE__ ) );
 
-// Vajra Autoloader.
-$vajra_autoloader = VAJRA_STARTER_DIR . 'vendor/autoload_packages.php';
-if ( is_readable( $vajra_autoloader ) ) {
-	require_once $vajra_autoloader;
+// Vajra Starter Autoloader.
+$vajra_starter_autoloader = VAJRA_STARTER_DIR . 'vendor/autoload_packages.php';
+if ( is_readable( $vajra_starter_autoloader ) ) {
+	require_once $vajra_starter_autoloader;
 } else { // Something very unexpected. Error out gently with an admin_notice and exit loading.
 	if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
 		error_log( // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
