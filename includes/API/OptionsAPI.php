@@ -151,4 +151,33 @@ class OptionsAPI {
 		);
 	}
 
+	/**
+	 * Delete option
+	 *
+	 * @param WP_REST_Request $request Request object.
+	 *
+	 * @return WP_Error|WP_REST_Response
+	 */
+	public function delete_option( WP_REST_Request $request ) {
+		$key = $request->get_param( 'key' );
+
+		$options = Options::get_instance();
+
+		if ( ! empty( $key ) ) {
+			if ( $options->has( $key ) ) {
+				$options->delete( $key );
+			} else {
+				return new WP_Error( 'option_error', __( 'Invalid or expired option name.', 'vajra-starter' ) );
+			}
+		} else {
+			return new WP_Error( 'option_error', __( 'No option key is provided.', 'vajra-starter' ) );
+		}
+
+		return new WP_REST_Response(
+			array(
+				'message' => __( 'Setting deleted.', 'vajra-starter' ),
+			),
+			200
+		);
+	}
 }
