@@ -9,7 +9,7 @@
     "dev:php": "composer install",
     "build:blocks": "wp-scripts build",
     "build:dashboard": "wp-scripts build --webpack-src-dir=src/dashboard --output-path=build/dashboard",
-    "build:all": "composer install --no-dev && npm run build && npm run build:dashboard",
+    "build:all": "composer install --no-dev && npm run build:blocks && npm run build:dashboard",
     "format": "wp-scripts format",
     "lint:css": "wp-scripts lint-style",
     "lint:js": "wp-scripts lint-js",
