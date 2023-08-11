@@ -87,7 +87,7 @@ class Plugin {
 	 * @return array
 	 */
 	public function action_links( $actions ) {
-		$settings_link = '<a href="' . esc_url( admin_url( 'admin.php?page=vajra-starter-dashboard' ) ) . '">' . __( 'Dashboard', 'vajra-starter' ) . '</a>';
+		$settings_link = '<a href="' . esc_url( admin_url( 'admin.php?page=vajra-starter#/dashboard' ) ) . '">' . __( 'Dashboard', 'vajra-starter' ) . '</a>';
 		array_unshift( $actions, $settings_link );
 
 		return $actions;
