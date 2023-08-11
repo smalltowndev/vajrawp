@@ -7,9 +7,9 @@ export function showPromiseToast(res, loadingText = '', successText = '', errorT
 	toast.promise(
 		res,
 		{
-			loading: loadingText ?? 'Loading',
-			success: successText ?? 'Completed!',
-			error: errorText ?? 'Error while loading!',
+			loading: loadingText ? loadingText : 'Loading..',
+			success: successText ? successText : 'Loaded!',
+			error: errorText ? errorText : 'Error while loading!',
 		}
 	);
 }
