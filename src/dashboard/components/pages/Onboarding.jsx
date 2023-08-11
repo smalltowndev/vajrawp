@@ -1,11 +1,8 @@
 import { CheckCircleIcon } from '@heroicons/react/20/solid'
 import OnboardingLayout from '../layout/OnboardingLayout';
 import { NavLink } from 'react-router-dom'
-import classNames from "clsx";
 
 const tiers = [
-
-
     {
         name: 'Starter',
         id: 'tier-starter',
@@ -61,8 +58,8 @@ const Onboarding = () => {
                     Skip to Dashboard
                 </NavLink>
             </div>
-            <div className="bg-white px-4 py-4 rounded">
-                <nav aria-label="Progress">
+            <div className="bg-white rounded">
+                <nav aria-label="Progress" className="px-4 py-6 border-b border-b-gray-200">
                     <ol role="list" className="space-y-4 md:flex md:space-x-8 md:space-y-0">
                         {steps.map(( step) => (
                             <li key={step.id} className="md:flex-1">
@@ -93,7 +90,7 @@ const Onboarding = () => {
                         ))}
                     </ol>
                 </nav>
-                <div className="bg-white py-20">
+                <div className="bg-white px-4 py-24">
                     <div className="mx-auto max-w-7xl px-6 lg:px-8">
                         <div className="mx-auto max-w-4xl sm:text-center">
                             <p className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">

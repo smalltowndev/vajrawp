@@ -2,6 +2,7 @@
  * External dependencies.
  */
 import { Route, Routes } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 
 /**
  * Internal dependencies.
@@ -11,6 +12,8 @@ import { GeneralSettings, BlockSettings } from './pages/settings';
 
 const App = () => {
     return (
+        <>
+            <Toaster position="bottom-center" />
             <Routes>
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/getting-started" element={<Onboarding />} />
@@ -18,6 +21,7 @@ const App = () => {
                 <Route path="/settings" element={<GeneralSettings />} />
                 <Route path="/block-settings" element={<BlockSettings />} />
             </Routes>
+        </>
     )
 }
 

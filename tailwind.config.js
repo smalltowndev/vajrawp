@@ -12,7 +12,12 @@ module.exports = {
 				display: ['Inter', ...defaultTheme.fontFamily.sans],
 				heading: ['Inter', ...defaultTheme.fontFamily.sans],
 			},
+			colors: {
+				background: 'var(--vajra-starter__color-background)',
+			}
 		},
 	},
-	plugins: [],
+	plugins: [
+		require('@tailwindcss/forms'),
+	],
 }

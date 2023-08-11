@@ -1,11 +1,29 @@
 #wpcontent {
-    padding-left: 0;
+	padding-left: 0;
 }
 
 .wp-menu-image.dashicons-before img {
-    display: inline-block;
+	display: inline-block;
+}
+
+#wpbody-content input[type="checkbox"]:checked::before,
+#wpbody-content input[type="radio"]:checked::before {
+	display: none;
 }
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+   :root {
+	   /**
+		* Change these colors to your preferred ones.
+		*/
+	   --vajra-starter__color-background: #edede9;
+   }
+}
+
+body {
+	background: var(--vajra-starter__color-background);
+}

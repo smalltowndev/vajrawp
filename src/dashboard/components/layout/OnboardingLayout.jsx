@@ -1,8 +1,7 @@
 /**
  * Internal dependencies.
  */
-import { Header, Footer, Content } from '../parts';
-import {Cog6ToothIcon} from "@heroicons/react/20/solid";
+import { Footer, Content } from '../parts';
 
 export default function OnboardingLayout({ children }) {
     return (

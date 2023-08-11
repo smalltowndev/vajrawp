@@ -14,10 +14,8 @@
 phpcs.xml.dist
 
 # Exclude vendor folder, except required dependencies.
-/vendor
-!/vendor/composer
-!/vendor/autoload.php
 !/build
+!/assets
 
 # Files
 .babelrc

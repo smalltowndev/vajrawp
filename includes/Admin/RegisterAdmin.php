@@ -104,9 +104,11 @@ class RegisterAdmin {
 	 */
 	public function initial_dashboard_state() {
 		return array(
-			'apiRoot'           => esc_url_raw( rest_url() ),
-			'registrationNonce' => wp_create_nonce( 'vajra-registration-nonce' ),
+			'apiRoute'          => VAJRA_STARTER_SLUG . '/v1',
 			'assetsURL'         => VAJRA_STARTER_URL . '/assets',
+			// You can also replace this changelog URL to something else so that it loads from one source and stays up-to-date always.
+			'changelogURL'      => VAJRA_STARTER_URL . '/changelog.json?ver=' . filemtime( VAJRA_STARTER_DIR . '/changelog.json' ),
+			'version'           => VAJRA_STARTER_VERSION,
 		);
 	}
 

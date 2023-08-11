@@ -1,6 +1,13 @@
+/**
+ * External dependencies.
+ */
 import { NavLink } from 'react-router-dom'
 import { Disclosure } from '@headlessui/react'
 import classNames from 'clsx';
+
+/**
+ * Internal dependencies.
+ */
 const pluginState = window.vajraPluginState;
 
 const Header = ({ navigation, secondaryNav = null }) => {
@@ -19,8 +26,8 @@ const Header = ({ navigation, secondaryNav = null }) => {
                                 <h1 className="text-3xl font-bold leading-tight tracking-tight text-gray-900">Vajra Starter</h1>
                             </div>
                             <div>
-                                {/* @todo: Make version numbering dynamic and maybe show an update button when an update is available */}
-                                <div className="bg-gray-200 py-1 px-2 rounded-md font-bold text-gray-500 hover:text-gray-800">v0.1.0-beta</div>
+                                {/* @todo: Maybe show an update button when an update is available */}
+                                <div className="bg-gray-200 py-1 px-2 rounded-md font-bold text-gray-500 hover:text-gray-800">v{pluginState.version}</div>
                             </div>
                         </div>
                         <div className="flex h-16 justify-between">
