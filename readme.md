@@ -2,7 +2,8 @@
 
 [![License](https://img.shields.io/badge/license-GPL--2.0%2B-red.svg)](https://github.com/smalltowndev/vajra-starter-plugin/blob/master/license.txt)
 
-https://www.youtube.com/watch?v=S0eoqFg0TCk
+v0.2-beta Update walkthrough - https://www.youtube.com/watch?v=IUyJcUzROGc&t=326s
+Initial release walkthrough - https://www.youtube.com/watch?v=S0eoqFg0TCk
 
 This is a WordPress Plugin scaffold to help you create awesome plugins without having to build everything from scratch. Its a growing pain in WordPress that even in 2023 you still have to create your own settings, dashboards, onboarding, file autoloaders and what not. So here's a quick way to kickstart a plugin with almost everything you need.
 
@@ -13,13 +14,21 @@ Why almost? As you start to make this plugin yours it is bound to have that one 
 Make sure you have php, composer and nodejs installed. And then you can run the following command -
 
 ```bash
-composer install && npm install
+npm install && npm run dev:php
 ```
 
 To build javascript files in src directory -
 
 ```bash
 npm run build:all
+```
+
+And to Start developing for either Dashboard or Blocks App, run the below scripts respectively -
+
+```bash
+npm run dev:dashboard
+# Or
+npm run dev:blocks
 ```
 
 ## Contribute
@@ -41,3 +50,8 @@ Vajra Starter Plugin is licensed under [GNU General Public License v2 (or later)
 ## Inspiration
 
 This plugin is heavily influenced by plugins like Jetpack, WooCommerce, and many more. Ultimately becoming a mix of all worlds!
+
+## Sponsor
+
+If you are really interested in the ongoing development of this project or just consider my work worth supporting, you can become a sponsor via Patreon, here's the link to that -
+[Patreon](https://www.patreon.com/smalltowndev) - https://www.patreon.com/smalltowndev
