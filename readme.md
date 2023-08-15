@@ -23,6 +23,12 @@
 
 <br />
 
+## Overview
+
+This is a WordPress Plugin scaffold to help you create awesome plugins without having to build everything from scratch. Its a growing pain in WordPress that even in 2023 you still have to create your own settings, dashboards, onboarding, file autoloaders and what not. So here's a quick way to kickstart a plugin with almost everything you need.
+
+Why almost? As you start to make this plugin yours it is bound to have that one cool feature missing that you want, so why not add that to this yourself. Welcome to opensource, even if its your first time contributing, I'll make sure that you feel like home :)
+
 ## Features
 
 - 🚀 **Built in React App for Admin**
@@ -36,7 +42,8 @@
 
 ### Step 1
 
-Run the following bash command.
+Make sure you have php, composer and nodejs installed. And then run the following bash command -
+
 ```sh
 npm install && npm run dev:php
 ```
