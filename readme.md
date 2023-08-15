@@ -33,7 +33,7 @@ Why almost? As you start to make this plugin yours it is bound to have that one 
 
 - 🚀 **Built in React App for Admin**
 - ⚙️ **Settings UI and Data Store** - _Customizable UI fields with Data Store_
-- 🏄‍ **Onboarding and Changelog UI** - _In Admin Changelog and Onboarding UI_
+- 🏄‍♂️ **Onboarding and Changelog UI** - _In Admin Changelog and Onboarding UI_
 - 🏗️ **Blocks Development Workflow**
 - 📂 **PHP Autoloader**
 - ✨ **TailwindCSS Support**
