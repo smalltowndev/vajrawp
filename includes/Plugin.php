@@ -1,20 +1,20 @@
 <?php
 /**
- * Primary class file for the Vajra Starter Plugin.
+ * Primary class file for the VajraWP.
  *
- * @package VajraStarterPlugin
+ * @package VajraWP
  */
 
-namespace SmallTownDev\VajraStarter;
+namespace VajraWP;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use SmallTownDev\VajraStarter\Core\Options;
-use SmallTownDev\VajraStarter\API\OptionsAPI;
-use SmallTownDev\VajraStarter\Blocks\RegisterBlocks;
-use SmallTownDev\VajraStarter\Admin\RegisterAdmin;
+use VajraWP\Core\Options;
+use VajraWP\API\OptionsAPI;
+use VajraWP\Blocks\RegisterBlocks;
+use VajraWP\Admin\RegisterAdmin;
 
 /**
  * Class Plugin
@@ -75,7 +75,7 @@ class Plugin {
 		 * Add "Dashboard" link to plugins page.
 		 */
 		add_filter(
-			'plugin_action_links_' . VAJRA_STARTER_FOLDER . '/vajra-starter-plugin.php',
+			'plugin_action_links_' . VAJRAWP_FOLDER . '/vajrawp.php',
 			array( $this, 'action_links' )
 		);
 	}
@@ -87,7 +87,7 @@ class Plugin {
 	 * @return array
 	 */
 	public function action_links( $actions ) {
-		$settings_link = '<a href="' . esc_url( admin_url( 'admin.php?page=vajra-starter#/dashboard' ) ) . '">' . __( 'Dashboard', 'vajra-starter' ) . '</a>';
+		$settings_link = '<a href="' . esc_url( admin_url( 'admin.php?page=vajrawp#/dashboard' ) ) . '">' . __( 'Dashboard', 'vajrawp' ) . '</a>';
 		array_unshift( $actions, $settings_link );
 
 		return $actions;

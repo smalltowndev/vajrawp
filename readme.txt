@@ -1,8 +1,8 @@
-=== Vajra Starter Plugin ===
+=== VajraWP ===
 Contributors: smalltowndev, lushkant
 Requires at least: 6.0
 Requires PHP: 8.0
-Tested up to: 6.3
+Tested up to: 6.3.1
 Stable tag: 1.0.0
 Tags: scaffold, plugin starter, settings, 
 License: GPLv2
@@ -18,7 +18,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Yes, absolutely, though if possible a shoutout or mention of this plugin will go a long way in support.
 
 = Where can I get help? =
-You can get help by reaching out to me at https://github.com/smalltowndev/vajra-starter-plugin.
+You can get help by reaching out to me at https://github.com/smalltowndev/vajrawp.
 
 == Changelog ==
 

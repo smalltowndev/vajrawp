@@ -13,7 +13,7 @@ import './styles/index.css';
  * Initial render function.
  */
 function render() {
-	const container = document.getElementById( 'vajra-starter-dashboard-root' );
+	const container = document.getElementById( 'vajrawp-dashboard-root' );
 
 	if ( null === container ) {
 		return;

@@ -2,12 +2,12 @@
 /**
  * Options API registration class.
  *
- * @package VajraStarterPlugin
+ * @package VajraWP
  */
 
-namespace SmallTownDev\VajraStarter\API;
+namespace VajraWP\API;
 
-use SmallTownDev\VajraStarter\Core\Options;
+use VajraWP\Core\Options;
 use WP_Error;
 use WP_REST_Request;
 use WP_REST_Response;
@@ -26,7 +26,7 @@ class OptionsAPI {
 	 *
 	 * @var $namespace
 	 */
-	private $namespace = VAJRA_STARTER_SLUG;
+	private $namespace = VAJRAWP_SLUG;
 
 	/**
 	 * Available routes.
@@ -114,7 +114,7 @@ class OptionsAPI {
 			if ( $options->has( $key ) ) {
 				$result = $options->get( $key );
 			} else {
-				return new WP_Error( 'option_error', __( 'Invalid or expired option name.', 'vajra-starter' ) );
+				return new WP_Error( 'option_error', __( 'Invalid or expired option name.', 'vajrawp' ) );
 			}
 		} else {
 			$result = $options->get();
@@ -140,12 +140,12 @@ class OptionsAPI {
 				$options->set( $key, $value );
 			}
 		} else {
-			return new WP_Error( 'settings_error', __( 'No settings provided.', 'vajra-starter' ) );
+			return new WP_Error( 'settings_error', __( 'No settings provided.', 'vajrawp' ) );
 		}
 
 		return new WP_REST_Response(
 			array(
-				'message' => __( 'Settings updated.', 'vajra-starter' ),
+				'message' => __( 'Settings updated.', 'vajrawp' ),
 			),
 			200
 		);
@@ -167,15 +167,15 @@ class OptionsAPI {
 			if ( $options->has( $key ) ) {
 				$options->delete( $key );
 			} else {
-				return new WP_Error( 'option_error', __( 'Invalid or expired option name.', 'vajra-starter' ) );
+				return new WP_Error( 'option_error', __( 'Invalid or expired option name.', 'vajrawp' ) );
 			}
 		} else {
-			return new WP_Error( 'option_error', __( 'No option key is provided.', 'vajra-starter' ) );
+			return new WP_Error( 'option_error', __( 'No option key is provided.', 'vajrawp' ) );
 		}
 
 		return new WP_REST_Response(
 			array(
-				'message' => __( 'Setting deleted.', 'vajra-starter' ),
+				'message' => __( 'Setting deleted.', 'vajrawp' ),
 			),
 			200
 		);

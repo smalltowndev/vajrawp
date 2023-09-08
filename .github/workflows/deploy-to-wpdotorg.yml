@@ -6,7 +6,7 @@ on:
       - "*"
 
 env:
-  SLUG: vajra-starter-plugin
+  SLUG: vajrawp
 
 jobs:
   tag:

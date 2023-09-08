@@ -21,9 +21,9 @@ const Header = ({ navigation, secondaryNav = null }) => {
                                 <img
                                     className="block h-9 w-auto"
                                     src={pluginState.assetsURL + '/img/icon-dark.svg'}
-                                    alt="Vajra Starter"
+                                    alt="VajraWP"
                                 />
-                                <h1 className="text-3xl font-bold leading-tight tracking-tight text-gray-900">Vajra Starter</h1>
+                                <h1 className="text-3xl font-bold leading-tight tracking-tight text-gray-900">VajraWP</h1>
                             </div>
                             <div>
                                 {/* @todo: Maybe show an update button when an update is available */}

@@ -1,5 +1,5 @@
 {
-  "name": "vajra-starter-plugin",
+  "name": "vajrawp",
   "version": "0.2.0-beta",
   "description": "A starter WordPress plugin scaffold which comes pre-configured for block development, admin settings and standard WordPress plugin rules.",
   "main": "build/index.js",
@@ -45,6 +45,6 @@
     "includes",
     "vendor",
     "changelog.json",
-    "vajra-starter-plugin.php"
+    "vajrawp.php"
   ]
 }

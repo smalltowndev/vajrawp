@@ -2,10 +2,10 @@
 /**
  * Plugin Options class.
  *
- * @package VajraStarterPlugin
+ * @package VajraWP
  */
 
-namespace SmallTownDev\VajraStarter\Core;
+namespace VajraWP\Core;
 
 /**
  * Plugin options registration and management.
@@ -21,7 +21,7 @@ class Options {
 	/**
 	 * Options key.
 	 */
-	const OPTION_KEY = 'vajra_starter_options';
+	const OPTION_KEY = 'vajrawp_options';
 
 	/**
 	 * Get an instance of class.
