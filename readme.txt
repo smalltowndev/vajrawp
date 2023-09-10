@@ -22,6 +22,10 @@ You can get help by reaching out to me at https://github.com/smalltowndev/vajraw
 
 == Changelog ==
 
+= 0.3.0-beta =
+* New: Ready for plugin generator
+* Improvements: Updated package scripts
+
 = 0.2.0-beta =
 * New: Options API in REST for Client Side Apps
 * New: Added Settings Input fields at Dashboard App
