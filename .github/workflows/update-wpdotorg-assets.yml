@@ -6,7 +6,7 @@ on:
       - develop
 
 env:
-  SLUG: vajra-starter-plugin
+  SLUG: vajrawp
 
 jobs:
   master:

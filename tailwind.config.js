@@ -13,7 +13,7 @@ module.exports = {
 				heading: ['Inter', ...defaultTheme.fontFamily.sans],
 			},
 			colors: {
-				background: 'var(--vajra-starter__color-background)',
+				background: 'var(--vajrawp__color-background)',
 			}
 		},
 	},

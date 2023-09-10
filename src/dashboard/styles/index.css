@@ -20,10 +20,10 @@
 	   /**
 		* Change these colors to your preferred ones.
 		*/
-	   --vajra-starter__color-background: #edede9;
+	   --vajrawp__color-background: #edede9;
    }
 }
 
 body {
-	background: var(--vajra-starter__color-background);
+	background: var(--vajrawp__color-background);
 }

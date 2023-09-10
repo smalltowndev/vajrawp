@@ -1,17 +1,17 @@
 {
-    "name": "smalltowndev/vajra-starter-plugin",
+    "name": "smalltowndev/vajrawp",
     "description": "A starter WordPress plugin scaffold which comes pre-configured for block development, admin dashboard with settings and standard plugin code.",
     "type": "wordpress-plugin",
     "author": "SmallTownDev Co.<hey@smalltowndev.com>",
     "license": "GPL v2 or later",
     "autoload": {
         "psr-4": {
-            "SmallTownDev\\VajraStarter\\": "includes/"
+            "VajraWP\\": "includes/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "SmallTownDev\\VajraStarter\\Tests\\": "tests"
+            "VajraWP\\Tests\\": "tests"
         }
     },
     "require-dev": {

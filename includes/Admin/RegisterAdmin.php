@@ -2,10 +2,10 @@
 /**
  * Admin registration class.
  *
- * @package VajraStarterPlugin
+ * @package VajraWP
  */
 
-namespace SmallTownDev\VajraStarter\Admin;
+namespace VajraWP\Admin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -29,15 +29,15 @@ class RegisterAdmin {
 	 * Register admin dashboard.
 	 */
 	public function register_admin_dashboard() {
-		$primary_slug = 'vajra-starter';
+		$primary_slug = 'vajrawp';
 
 		$dashboard_page_suffix = add_menu_page(
-			__( 'Vajra Starter Dashboard', 'vajra-starter' ),
-			_x( 'Vajra Starter', 'The Vajra Plugin product name, without the Vajra prefix', 'vajra-starter' ),
+			_x( 'VajraWP Dashboard', 'Page title' , 'vajrawp' ),
+			_x( 'VajraWP', 'Menu title', 'vajrawp' ),
 			'manage_options',
 			$primary_slug,
 			array( $this, 'plugin_dashboard_page' ),
-			VAJRA_STARTER_URL . '/assets/img/icon.svg',
+			VAJRAWP_URL . '/assets/img/icon.svg',
 			30
 		);
 
@@ -45,20 +45,20 @@ class RegisterAdmin {
 		add_action( 'load-' . $dashboard_page_suffix, array( $this, 'dashboard_admin_init' ) );
 
 		// Register dashboard submenu nav item.
-		add_submenu_page( $primary_slug, 'Vajra Dashboard', 'Dashboard', 'manage_options', $primary_slug . '#/dashboard', '__return_null' );
+		add_submenu_page( $primary_slug, 'VajraWP Dashboard', 'Dashboard', 'manage_options', $primary_slug . '#/dashboard', '__return_null' );
 
 		// Remove duplicate menu hack.
 		// Note: It needs to go after the above add_submenu_page call.
 		remove_submenu_page( $primary_slug, $primary_slug );
 
 		// Register getting started aka onboarding submenu nav item.
-		add_submenu_page( $primary_slug, 'Vajra Dashboard', 'Getting Started', 'manage_options', $primary_slug . '#/getting-started', '__return_null' );
+		add_submenu_page( $primary_slug, 'VajraWP Dashboard', 'Getting Started', 'manage_options', $primary_slug . '#/getting-started', '__return_null' );
 
 		// Register changelog submenu nav item.
-		add_submenu_page( $primary_slug, 'Vajra Dashboard', 'Changelog', 'manage_options', $primary_slug . '#/changelog', '__return_null' );
+		add_submenu_page( $primary_slug, 'VajraWP Dashboard', 'Changelog', 'manage_options', $primary_slug . '#/changelog', '__return_null' );
 
 		// Register settings submenu nav item.
-		add_submenu_page( $primary_slug, 'Vajra Dashboard', 'Settings', 'manage_options', $primary_slug . '#/settings', '__return_null' );
+		add_submenu_page( $primary_slug, 'VajraWP Dashboard', 'Settings', 'manage_options', $primary_slug . '#/settings', '__return_null' );
 	}
 
 	/**
@@ -73,19 +73,19 @@ class RegisterAdmin {
 	 */
 	public function enqueue_dashboard_admin_scripts() {
 		Assets::register_script(
-			'vajra-starter-dashboard',
+			'vajrawp-dashboard',
 			'build/dashboard/index.js',
-			VAJRA_STARTER_ROOT_FILE,
+			VAJRAWP_ROOT_FILE,
 			array(
 				'in_footer'  => true,
-				'textdomain' => 'vajra-starter',
+				'textdomain' => 'vajrawp',
 			)
 		);
 
 		// Enqueue app script.
-		Assets::enqueue_script( 'vajra-starter-dashboard' );
+		Assets::enqueue_script( 'vajrawp-dashboard' );
 		// Initial JS state.
-		wp_add_inline_script( 'vajra-starter-dashboard', $this->render_dashboard_initial_state(), 'before' );
+		wp_add_inline_script( 'vajrawp-dashboard', $this->render_dashboard_initial_state(), 'before' );
 	}
 
 	/**
@@ -104,11 +104,11 @@ class RegisterAdmin {
 	 */
 	public function initial_dashboard_state() {
 		return array(
-			'apiRoute'          => VAJRA_STARTER_SLUG . '/v1',
-			'assetsURL'         => VAJRA_STARTER_URL . '/assets',
+			'apiRoute'          => VAJRAWP_SLUG . '/v1',
+			'assetsURL'         => VAJRAWP_URL . '/assets',
 			// You can also replace this changelog URL to something else so that it loads from one source and stays up-to-date always.
-			'changelogURL'      => VAJRA_STARTER_URL . '/changelog.json?ver=' . filemtime( VAJRA_STARTER_DIR . '/changelog.json' ),
-			'version'           => VAJRA_STARTER_VERSION,
+			'changelogURL'      => VAJRAWP_URL . '/changelog.json?ver=' . filemtime( VAJRAWP_DIR . '/changelog.json' ),
+			'version'           => VAJRAWP_VERSION,
 		);
 	}
 
@@ -117,7 +117,7 @@ class RegisterAdmin {
 	 */
 	public function plugin_dashboard_page() {
 		?>
-			<div id="vajra-starter-dashboard-root"></div>
+			<div id="vajrawp-dashboard-root"></div>
 		<?php
 	}
 }

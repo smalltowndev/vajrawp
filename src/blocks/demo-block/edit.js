@@ -37,13 +37,13 @@ export default function Edit({ attributes, setAttributes }) {
 
 	const users = [];
 
-	vajraStarterDemoBlockData.map((user) => {
+	vajrawpDemoBlockData.map((user) => {
 		users.push({ value: user.username, label: user.name});
 	});
 
 	const onChangeUser = ( user ) => {
 		let userData = {};
-		vajraStarterDemoBlockData.map( ( userKey ) => {
+		vajrawpDemoBlockData.map( ( userKey ) => {
 			if ( userKey.username === user ) {
 				userData = userKey;
 			}
@@ -58,7 +58,7 @@ export default function Edit({ attributes, setAttributes }) {
 		}
 
 		let userData = {};
-		vajraStarterDemoBlockData.map( ( user ) => {
+		vajrawpDemoBlockData.map( ( user ) => {
 			if ( user.username === selection ) {
 				userData = user;
 			}

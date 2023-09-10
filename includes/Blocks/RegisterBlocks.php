@@ -2,10 +2,10 @@
 /**
  * Blocks registration class.
  *
- * @package VajraStarterPlugin
+ * @package VajraWP
  */
 
-namespace SmallTownDev\VajraStarter\Blocks;
+namespace VajraWP\Blocks;
 
 /**
  * Class RegisterBlocks
@@ -27,7 +27,7 @@ class RegisterBlocks {
 		);
 
 		foreach ( $blocks as $block ) {
-			register_block_type( VAJRA_STARTER_DIR . "/build/blocks/{$block}" );
+			register_block_type( VAJRAWP_DIR . "/build/blocks/{$block}" );
 		}
 
 		add_action( 'admin_enqueue_scripts', array( $this, 'block_scripts' ) );
@@ -38,21 +38,21 @@ class RegisterBlocks {
 	 */
 	public function block_scripts() {
 		/**
-		 * Note that in the block json the block name is "vajra-starter/demo-block" though you also need to add a suffix
+		 * Note that in the block json the block name is "vajrawp/demo-block" though you also need to add a suffix
 		 * of editor-script to make it work at block editor.
 		 */
-		$handle = 'vajra-starter-demo-block-editor-script';
+		$handle = 'vajrawp-demo-block-editor-script';
 
-		$data = get_transient( 'vajra-starter-demo-block-data' );
+		$data = get_transient( 'vajrawp-demo-block-data' );
 
 		if ( ! $data ) {
 			$response = wp_remote_get( 'https://jsonplaceholder.typicode.com/users' );
 			$data     = wp_remote_retrieve_body( $response );
 			$data     = json_decode( $data );
 
-			set_transient( 'vajra-starter-demo-block-data', $data, 7 * DAY_IN_SECONDS );
+			set_transient( 'vajrawp-demo-block-data', $data, 7 * DAY_IN_SECONDS );
 		}
 
-		wp_localize_script( $handle, 'vajraStarterDemoBlockData', $data );
+		wp_localize_script( $handle, 'vajrawpDemoBlockData', $data );
 	}
 }

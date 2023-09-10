@@ -5,7 +5,7 @@ const features = [
     {
         name: 'PHP Autoloader',
         description:
-            'Vajra uses Composer to autoload your PHP files and namespaces all without having to manually to include/require them.',
+            'VajraWP uses Composer to autoload your PHP files and namespaces all without having to manually to include/require them.',
         icon: FolderIcon,
     },
     {
@@ -15,7 +15,7 @@ const features = [
     },
     {
         name: 'Blocks Development Workflow',
-        description: 'Vajra uses wp-scripts under the hood to give you the latest and greatest of WordPress Block Development.',
+        description: 'VajraWP uses wp-scripts under the hood to give you the latest and greatest of WordPress Block Development.',
         icon: CubeIcon,
     },
     {

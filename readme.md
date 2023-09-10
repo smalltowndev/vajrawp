@@ -1,6 +1,6 @@
-<a href="https://smalltowndev.com/"><img alt="VajraWP - A WordPress Plugin Starter" src="https://raw.githubusercontent.com/smalltowndev/vajra-starter-plugin/main/assets/img/plugin-header.png"/></a>
+<a href="https://smalltowndev.com/"><img alt="VajraWP - A WordPress Plugin Starter" src="https://raw.githubusercontent.com/smalltowndev/vajrawp/main/assets/img/plugin-header.png"/></a>
 <div align="center">
-    <img src="https://img.shields.io/github/package-json/version/smalltowndev/vajra-starter-plugin" alt="Plugin Version" />
+    <img src="https://img.shields.io/github/package-json/version/smalltowndev/vajrawp" alt="Plugin Version" />
     <img src="https://img.shields.io/badge/license-GPL--2.0%2B-red.svg" alt="License" />
 </div>
 
@@ -45,7 +45,7 @@ Why almost? As you start to make this plugin yours it is bound to have that one 
 Make sure you have php, composer and nodejs installed. And then run the following bash command -
 
 ```sh
-npm install && npm run dev:php
+npm run install-scripts && npm run build:all
 ```
 
 ### Step 2
@@ -72,10 +72,10 @@ Find the full API reference on [official documentation](https://vajrawp.smalltow
 
 ## Contribute
 
-Thank you for thinking about contributing to Vajra Starter Plugin! If you're unsure of anything, feel free to submit an issue or pull request on any topic. The worst that can happen is that you'll be politely directed to the best location to ask your question or to change something in your pull request. There are a variety of options for how you can help:
+Thank you for thinking about contributing to VajraWP! If you're unsure of anything, feel free to submit an issue or pull request on any topic. The worst that can happen is that you'll be politely directed to the best location to ask your question or to change something in your pull request. There are a variety of options for how you can help:
 
 - If you think there is a cool or important feature missing, just add a pull request.
-- If you found a bug, [file a report here](https://github.com/smalltowndev/vajra-starter-plugin/issues/new?assignees=&labels=%5BType%5D+Bug&template=bug-report.yml).
+- If you found a bug, [file a report here](https://github.com/smalltowndev/vajrawp/issues/new?assignees=&labels=%5BType%5D+Bug&template=bug-report.yml).
 
 
 ## Inspiration
@@ -93,4 +93,4 @@ Need to report a security vulnerability? Email us at [smalltowndevco@gmail.com](
 
 ## License
 
-Vajra Starter Plugin is licensed under [GNU General Public License v2 (or later)](./license.txt).
+VajraWP is licensed under [GNU General Public License v2 (or later)](./license.txt).
