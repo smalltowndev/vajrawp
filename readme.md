@@ -9,9 +9,9 @@
 <div align="center">Lightweight, customizable and beautiful by default.</div>
 <br />
 <div align="center">
-<a href="#">Website (Soon)</a> 
+<a href="https://vajrawp.smalltowndev.com">Website</a> 
 <span> · </span>
-<a href="#">Documentation (Soon)</a> 
+<a href="https://vajrawp.smalltowndev.com/docs">Documentation</a> 
 <span> · </span>
 <a href="https://twitter.com/smalltowndevco">Twitter</a>
 </div>
