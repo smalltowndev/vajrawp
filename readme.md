@@ -13,7 +13,7 @@
 <span> · </span>
 <a href="https://vajrawp.smalltowndev.com/docs">Documentation</a> 
 <span> · </span>
-<a href="https://twitter.com/smalltowndevco">Twitter</a>
+<a href="https://twitter.com/smalltowndevco">X/Twitter</a>
 </div>
 
 <br />
