@@ -4,6 +4,7 @@
   "description": "A starter WordPress plugin scaffold which comes pre-configured for block development, admin settings and standard WordPress plugin rules.",
   "main": "build/index.js",
   "scripts": {
+    "install-scripts": "composer install && npm install",
     "dev:blocks": "wp-scripts start",
     "dev:dashboard": "wp-scripts start --webpack-src-dir=src/dashboard --output-path=build/dashboard",
     "dev:php": "composer install",

@@ -45,7 +45,7 @@ Why almost? As you start to make this plugin yours it is bound to have that one 
 Make sure you have php, composer and nodejs installed. And then run the following bash command -
 
 ```sh
-npm install && npm run dev:php
+npm run install-scripts && npm run build:all
 ```
 
 ### Step 2
