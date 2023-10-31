@@ -23,7 +23,9 @@ const GeneralSettings = () => {
         ],
         "select-notify": "default",
         "site-meta-desc": "",
-        "site-meta-toggle": false
+        "site-support-email": "",
+        "site-meta-toggle": false,
+        "random-number": ""
     });
 
     const updateOption = ( value, id ) => {
@@ -47,11 +49,10 @@ const GeneralSettings = () => {
     return (
         <SettingsLayout>
             <SettingsCard
-                title="Toggle fields"
+                title="Text fields"
                 description="We'll always let you know about important changes, but you pick what else you want to hear about."
                 onSave={onSave}
             >
-
                 <TextInput
                     id="site-meta-desc"
                     label="Site Meta Description"
@@ -60,6 +61,31 @@ const GeneralSettings = () => {
                     placeholder="Hello world!"
                     setOption={updateOption}
                 />
+                <TextInput
+                    id="site-support-email"
+                    label="Site Support Email"
+                    description="These are delivered via SMS to your mobile phone."
+                    type="email"
+                    value={options["site-support-email"]}
+                    placeholder="your@email.com"
+                    setOption={updateOption}
+                />
+                <TextInput
+                    id="random-number"
+                    label="Lucky Number"
+                    description="These are delivered via SMS to your mobile phone."
+                    type="number"
+                    value={options["random-number"]}
+                    placeholder="12345"
+                    setOption={updateOption}
+                />
+            </SettingsCard>
+
+            <SettingsCard
+                title="Toggle fields"
+                description="We'll always let you know about important changes, but you pick what else you want to hear about."
+                onSave={onSave}
+            >
                 <ToggleInput
                     id="site-meta-toggle"
                     label="Site Meta Toggle"
