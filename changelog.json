@@ -1,4 +1,17 @@
 {
+  "0.4.0-beta": {
+    "New": [
+      "Support for Email, Number types in TextInput field",
+      "Support for field type aware Form submissions",
+      "Admin Bar menu with Flush Permalinks action",
+      "Showcase new fields at Settings page"
+    ],
+    "Fixes": [
+      "Blank page issue when no routes match",
+      "Blocks build script issue when run alone removed dashboard build dir"
+    ],
+    "Improvements": "Updated package scripts"
+  },
   "0.3.0-beta": {
     "New": "Ready for plugin generator",
     "Improvements": "Updated package scripts"

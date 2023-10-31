@@ -2,7 +2,7 @@
 Contributors: smalltowndev, lushkant
 Requires at least: 6.0
 Requires PHP: 8.0
-Tested up to: 6.3.1
+Tested up to: 6.3.2
 Stable tag: 1.0.0
 Tags: scaffold, plugin starter, settings, 
 License: GPLv2
@@ -21,6 +21,15 @@ Yes, absolutely, though if possible a shoutout or mention of this plugin will go
 You can get help by reaching out to me at https://github.com/smalltowndev/vajrawp.
 
 == Changelog ==
+
+= 0.4.0-beta =
+* New: Support for Email, Number types in TextInput field
+* New: Support for field type aware Form submissions
+* New: Admin Bar menu with Flush Permalinks action
+* New: Showcase new fields at Settings page
+* Fixes: Blank page issue when no routes match
+* Fixes: Blocks build script issue when run alone removed dashboard build dir
+* Improvements: Updated package scripts
 
 = 0.3.0-beta =
 * New: Ready for plugin generator

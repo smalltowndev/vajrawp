@@ -1,7 +1,7 @@
 /**
  * External dependencies.
  */
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 
 /**
@@ -20,6 +20,12 @@ const App = () => {
                 <Route path="/changelog" element={<Changelog />} />
                 <Route path="/settings" element={<GeneralSettings />} />
                 <Route path="/block-settings" element={<BlockSettings />} />
+
+                {/* When no routes match, it will redirect to this route path. Note that it should be registered above. */}
+                <Route
+                    path="*"
+                    element={<Navigate to="/dashboard" replace />}
+                />
             </Routes>
         </>
     )
