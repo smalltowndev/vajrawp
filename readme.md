@@ -33,7 +33,7 @@ Why almost? As you start to make this plugin yours it is bound to have that one 
 
 - 🚀 **Built in React App for Admin**
 - ⚙️ **Settings UI and Data Store** - _Customizable UI fields with Data Store_
-- 🏄‍♂️ **Onboarding and Changelog UI** - _In Admin Changelog and Onboarding UI_
+- 🏄‍️ **Onboarding and Changelog UI** - _In Admin Changelog and Onboarding UI_
 - 🏗️ **Blocks Development Workflow**
 - 📂 **PHP Autoloader**
 - ✨ **TailwindCSS Support**
@@ -42,7 +42,7 @@ Why almost? As you start to make this plugin yours it is bound to have that one 
 
 ### Step 1
 
-Make sure you have php, composer and nodejs installed. And then run the following bash command -
+Make sure you have PHP, Composer and NodeJS installed. And then run the following bash command -
 
 ```sh
 npm run install-scripts && npm run build:all
@@ -84,8 +84,10 @@ This plugin is heavily influenced by plugins like Jetpack, WooCommerce, and many
 
 ## Sponsor
 
-If you are really interested in the ongoing development of this project or just consider my work worth supporting, you can become a sponsor via Patreon, here's the link to that -
-[patreon.com/smalltowndev](https://www.patreon.com/smalltowndev) 
+If you are really interested in the ongoing development of this project or just consider my work worth supporting, you can become a sponsor via the below links -
+- [Github Sponsor](https://github.com/sponsors/lushkant?frequency=one-time)
+- [BuyMeACoffe](https://buymeacoffee.com/smalltowndev)
+- [Patreon](https://www.patreon.com/smalltowndev)
 
 ## Security
 
