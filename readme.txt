@@ -22,6 +22,15 @@ You can get help by reaching out to me at https://github.com/smalltowndev/vajraw
 
 == Changelog ==
 
+= 0.4.0-beta =
+* New: Support for Email, Number types in TextInput field
+* New: Support for field type aware Form submissions
+* New: Admin Bar menu with Flush Permalinks action
+* New: Showcase new fields at Settings page
+* Fixes: Blank page issue when no routes match
+* Fixes: Blocks build script issue when run alone removed dashboard build dir
+* Improvements: Updated package scripts
+
 = 0.3.0-beta =
 * New: Ready for plugin generator
 * Improvements: Updated package scripts
