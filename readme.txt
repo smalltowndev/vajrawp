@@ -2,7 +2,7 @@
 Contributors: smalltowndev, lushkant
 Requires at least: 6.0
 Requires PHP: 8.0
-Tested up to: 6.3.1
+Tested up to: 6.3.2
 Stable tag: 1.0.0
 Tags: scaffold, plugin starter, settings, 
 License: GPLv2
