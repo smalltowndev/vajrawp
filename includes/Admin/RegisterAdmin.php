@@ -160,7 +160,7 @@ class RegisterAdmin {
 				'id'     => $parent_menu_id,
 				'parent' => null,
 				'title'  => __( 'VajraWP Tools', 'vajrawp' ),
-				'href'   => esc_url( admin_url( 'admin.php?page=' . $prefix . '#/dashboard' ) ),
+				'href'   => esc_url( admin_url( 'admin.php?page=' . $prefix ) ),
 			)
 		);
 
@@ -194,7 +194,7 @@ class RegisterAdmin {
 		flush_rewrite_rules();
 
         // phpcs:ignore.
-		$redirect_uri = wp_unslash( $_SERVER['HTTP_REFERER'] ) && ! empty( $_SERVER['HTTP_REFERER'] ) ? $_SERVER['HTTP_REFERER'] : admin_url( 'admin.php?page=' . $prefix . '#/dashboard' );
+		$redirect_uri = wp_unslash( $_SERVER['HTTP_REFERER'] ) && ! empty( $_SERVER['HTTP_REFERER'] ) ? $_SERVER['HTTP_REFERER'] : admin_url( 'admin.php?page=' . $prefix );
 
 		wp_safe_redirect( esc_url( $redirect_uri ) );
 		die();
