@@ -7,6 +7,8 @@
 
 namespace VajraWP\Admin;
 
+use \WP_Admin_Bar;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -23,16 +25,19 @@ class RegisterAdmin {
 	public function __construct() {
 		// Register Admin Dashboard.
 		add_action( 'admin_menu', array( $this, 'register_admin_dashboard' ) );
+
+		// Handles Admin Bar menu setup and actions.
+		$this->setup_admin_bar_menu();
 	}
 
 	/**
 	 * Register admin dashboard.
 	 */
 	public function register_admin_dashboard() {
-		$primary_slug = 'vajrawp';
+		$primary_slug = VAJRAWP_SLUG;
 
 		$dashboard_page_suffix = add_menu_page(
-			_x( 'VajraWP Dashboard', 'Page title' , 'vajrawp' ),
+			_x( 'VajraWP Dashboard', 'Page title', 'vajrawp' ),
 			_x( 'VajraWP', 'Menu title', 'vajrawp' ),
 			'manage_options',
 			$primary_slug,
@@ -72,8 +77,10 @@ class RegisterAdmin {
 	 * Enqueue plugin admin scripts and styles.
 	 */
 	public function enqueue_dashboard_admin_scripts() {
+		$prefix = VAJRAWP_SLUG;
+
 		Assets::register_script(
-			'vajrawp-dashboard',
+			$prefix . '-dashboard',
 			'build/dashboard/index.js',
 			VAJRAWP_ROOT_FILE,
 			array(
@@ -83,9 +90,9 @@ class RegisterAdmin {
 		);
 
 		// Enqueue app script.
-		Assets::enqueue_script( 'vajrawp-dashboard' );
+		Assets::enqueue_script( $prefix . '-dashboard' );
 		// Initial JS state.
-		wp_add_inline_script( 'vajrawp-dashboard', $this->render_dashboard_initial_state(), 'before' );
+		wp_add_inline_script( $prefix . '-dashboard', $this->render_dashboard_initial_state(), 'before' );
 	}
 
 	/**
@@ -104,11 +111,11 @@ class RegisterAdmin {
 	 */
 	public function initial_dashboard_state() {
 		return array(
-			'apiRoute'          => VAJRAWP_SLUG . '/v1',
-			'assetsURL'         => VAJRAWP_URL . '/assets',
+			'apiRoute'     => VAJRAWP_SLUG . '/v1',
+			'assetsURL'    => VAJRAWP_URL . '/assets',
 			// You can also replace this changelog URL to something else so that it loads from one source and stays up-to-date always.
-			'changelogURL'      => VAJRAWP_URL . '/changelog.json?ver=' . filemtime( VAJRAWP_DIR . '/changelog.json' ),
-			'version'           => VAJRAWP_VERSION,
+			'changelogURL' => VAJRAWP_URL . '/changelog.json?ver=' . filemtime( VAJRAWP_DIR . '/changelog.json' ),
+			'version'      => VAJRAWP_VERSION,
 		);
 	}
 
@@ -119,5 +126,77 @@ class RegisterAdmin {
 		?>
 			<div id="vajrawp-dashboard-root"></div>
 		<?php
+	}
+
+	/**
+	 * Sets up admin bar and related functions.
+	 *
+	 * @return void
+	 */
+	public function setup_admin_bar_menu() {
+
+		// Register admin bar menu.
+		// Priority level is 1000 intentionally so that it shows up.
+		add_action( 'admin_bar_menu', array( $this, 'register_admin_bar_menu' ), 1000 );
+
+		// AJAX action handler for flushing permalinks.
+		$action_key = VAJRAWP_SLUG . '_flush_rules';
+		add_action( 'wp_ajax_' . $action_key, array( $this, 'process_permalinks_flush' ) );
+	}
+
+	/**
+	 * Register admin bar menu.
+	 *
+	 * @param WP_Admin_Bar $admin_bar The WP_Admin_Bar instance.
+	 *
+	 * @return void
+	 */
+	public function register_admin_bar_menu( WP_Admin_Bar $admin_bar ) {
+		$prefix         = VAJRAWP_SLUG;
+		$parent_menu_id = $prefix . '-dashboard';
+
+		$admin_bar->add_menu(
+			array(
+				'id'     => $parent_menu_id,
+				'parent' => null,
+				'title'  => __( 'VajraWP Tools', 'vajrawp' ),
+				'href'   => esc_url( admin_url( 'admin.php?page=' . $prefix . '#/dashboard' ) ),
+			)
+		);
+
+		$nonce = wp_create_nonce( $prefix . '_flush_rules' );
+
+		$admin_bar->add_menu(
+			array(
+				'parent' => $parent_menu_id,
+				'id'     => $prefix . '-flush-rewrite-rules',
+				'title'  => __( 'Flush Permalinks', 'vajrawp' ),
+				'href'   => esc_url( admin_url( 'admin-ajax.php?action=' . $prefix . '_flush_rules&nonce=' . $nonce ) ),
+			)
+		);
+	}
+
+	/**
+	 * Handles flush permalinks AJAX action from admin bar menu.
+	 *
+	 * @return void
+	 */
+	public function process_permalinks_flush() {
+		$prefix    = VAJRAWP_SLUG;
+		$nonce_key = $prefix . '_flush_rules';
+
+		// Do something.
+		if ( ! check_ajax_referer( $nonce_key, 'nonce' ) ) {
+			exit( 'Unauthorized' );
+		}
+
+		// Clear the permalinks in case any changes in permalinks or CPTs.
+		flush_rewrite_rules();
+
+        // phpcs:ignore.
+		$redirect_uri = wp_unslash( $_SERVER['HTTP_REFERER'] ) && ! empty( $_SERVER['HTTP_REFERER'] ) ? $_SERVER['HTTP_REFERER'] : admin_url( 'admin.php?page=' . $prefix . '#/dashboard' );
+
+		wp_safe_redirect( esc_url( $redirect_uri ) );
+		die();
 	}
 }
